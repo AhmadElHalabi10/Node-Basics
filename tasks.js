@@ -76,7 +76,7 @@ function quit() {
 startApp("Ahmad ElHalabi");
 
 /**
- * Lists all the possible commands
+ * lists all the possible commands
  *
  * @returns {void}
  */
