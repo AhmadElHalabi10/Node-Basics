@@ -75,13 +75,13 @@ function quit() {
 // The following line starts the application
 startApp("Ahmad ElHalabi");
 
-// /**
-//  * Lists all the possible commands
-//  *
-//  * @returns {void}
-//  */
-// function help() {
-//   console.log("quit or exit :: to go outside the running");
-//   console.log("hello! :: greetings");
-//   console.log("quitting now, goodbye! :: greeting after doing the exit");
-// }
+/**
+ * Lists all the possible commands
+ *
+ * @returns {void}
+ */
+function help() {
+  console.log("quit or exit :: to go outside the running");
+  console.log("hello! :: greetings");
+  console.log("quitting now, goodbye! :: greeting after doing the exit");
+}
