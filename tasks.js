@@ -34,9 +34,8 @@ function startApp(name) {
 function onDataReceived(text) {
   if (text === "quit\n" || text === "exit\n") {
     quit();
-  } else if (text === "hello\n") {
-    console.log("hello ");
-    hello();
+  } else if (text.trim().startsWith("hello")) {
+    hello(text.trim() + "!");
   } else if (text === "help\n") {
     help();
   } else {
@@ -60,8 +59,16 @@ function unknownCommand(c) {
  *
  * @returns {void}
  */
-function hello() {
-  console.log(`hello!`);
+function hello(input) {
+  const words = input.split(" ");
+  var outputString;
+  if (words.length > 1) {
+    outputString = input.replace("hello", `${words[0]}`, 1);
+  } else {
+    outputString = input;
+  }
+  outputString = outputString.trim();
+  console.log(outputString);
 }
 
 /**
@@ -87,3 +94,10 @@ function help() {
   console.log("hello! :: greetings");
   console.log("quitting now, goodbye! :: greeting after doing the exit");
 }
+
+/*
+..
+..
+..
+..
+*/
