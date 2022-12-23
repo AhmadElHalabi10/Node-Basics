@@ -36,7 +36,7 @@ function onDataReceived(text) {
     quit();
   } else if (text.trim().startsWith("hello")) {
     hello(text.trim() + "!");
-  } else if (text === "help\n") {
+  } else if (text.trim().startsWith("help")) {
     help();
   } else {
     unknownCommand(text);
