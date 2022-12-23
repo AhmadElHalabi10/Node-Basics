@@ -44,6 +44,8 @@ function onDataReceived(text) {
     add(text);
   } else if (text.trim().startsWith("remove")) {
     remove(text);
+  } else if (text.trim().startsWith("edit")) {
+    edit(text);
   } else {
     unknownCommand(text);
   }
@@ -135,7 +137,7 @@ function list() {
 */
 function add(input) {
   // List.push(input);
-  const words = input.split(" ");
+  const words = input.trim().split(" ");
   const ListAdd = List;
   ListAdd.push(words[-1]);
 }
@@ -159,5 +161,26 @@ function remove(input) {
     console.log("Sorry, this number doesn't exist");
   } else {
     console.log("Error");
+  }
+}
+
+/*
+..
+..
+*@returns(void)
+..
+*/
+// const array = input.split(" ");
+function edit(input) {
+  const array = input.trim().split(" ").slice(1);
+  if (input.split(" ").length === 1) {
+    console.log("Error");
+  } else {
+    if (array[1] === "next" && array[1] === "text") {
+      List[parseInt(array[0] - 1)] = task.slice(1).join(" ");
+    } else if (array[1] === "1" && array[2] === "new" && array[3] === "text") {
+      array = array.join(" ");
+      List[List.length - 1] = array;
+    }
   }
 }
