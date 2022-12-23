@@ -99,6 +99,9 @@ function help() {
   console.log("unknownCommand(c) :: for any unknown command");
   console.log("hello! :: greetings");
   console.log("quitting now, goodbye! :: greeting after doing the exit");
+  console.log("list() :: Lists all the possible tasks");
+  console.log("add(input) :: to add to the List");
+  console.log("remove(input) :: to remove from the list");
 }
 
 /*
