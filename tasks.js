@@ -72,7 +72,7 @@ function hello(input) {
 }
 
 /**
- * Exits the  application
+ * Exits the application
  *
  * @returns {void}
  */
