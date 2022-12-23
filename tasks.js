@@ -153,7 +153,11 @@ function remove(input) {
   // ListRemove.log(words[1]);
   if (words.length === 1) {
     List.pop();
-  } else if (words.length > 1) {
+  } else if (parseInt(words[1]) < List.length) {
     List.splice(parseInt(words[1] - 1), 1);
+  } else if (List.length < parseInt(words[1])) {
+    console.log("Sorry, this number doesn't exist");
+  } else {
+    console.log("Error");
   }
 }
