@@ -42,6 +42,8 @@ function onDataReceived(text) {
     list();
   } else if (text.trim().startsWith("add")) {
     add(text);
+  } else if (text.trim().startsWith("remove")) {
+    remove(text);
   } else {
     unknownCommand(text);
   }
@@ -132,5 +134,23 @@ function add(input) {
   // List.push(input);
   const words = input.split(" ");
   const ListAdd = List;
-  ListAdd.push(words[1]);
+  ListAdd.push(words[-1]);
+}
+
+/*
+..
+..
+.. remove to the list
+..
+..
+*/
+function remove(input) {
+  const words = input.split(" ");
+  // const ListRemove = List;
+  // ListRemove.log(words[1]);
+  if (words.length === 1) {
+    List.pop();
+  } else if (words.length > 1) {
+    List.splice(parseInt(words[1] - 1), 1);
+  }
 }
