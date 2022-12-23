@@ -38,6 +38,8 @@ function onDataReceived(text) {
     hello(text.trim() + "!");
   } else if (text.trim().startsWith("help")) {
     help();
+  } else if (text.trim().startsWith("list")) {
+    list();
   } else {
     unknownCommand(text);
   }
@@ -90,7 +92,7 @@ startApp("Ahmad ElHalabi");
  * @returns {void}
  */
 function help() {
-  console.log("quit or exit :: to go outside the running");
+  console.log("unknownCommand(c) :: for any unknown command");
   console.log("hello! :: greetings");
   console.log("quitting now, goodbye! :: greeting after doing the exit");
 }
@@ -101,3 +103,18 @@ function help() {
 ..
 ..
 */
+/**
+ * Lists all the possible tasks
+ *
+ * @returns {void}
+ */
+const List = ["UnknownCommand(c)", "hello(input)", "quit()", "help()"];
+function list() {
+  for (let i = 0; i < List.length; i++) {
+    console.log(i + 1 + "_ " + List[i]);
+  }
+  // console.log("text");
+  // console.log("hello(input) :: greetings");
+  // console.log("quit(), do an exit with greeting after doing the exit");
+  // console.log("help() :: Lists all the possible commands");
+}
