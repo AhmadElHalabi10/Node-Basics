@@ -40,6 +40,8 @@ function onDataReceived(text) {
     help();
   } else if (text.trim().startsWith("list")) {
     list();
+  } else if (text.trim().startsWith("add")) {
+    add(text);
   } else {
     unknownCommand(text);
   }
@@ -117,4 +119,18 @@ function list() {
   // console.log("hello(input) :: greetings");
   // console.log("quit(), do an exit with greeting after doing the exit");
   // console.log("help() :: Lists all the possible commands");
+}
+
+/*
+..
+..
+..
+.. add to the List array
+..
+*/
+function add(input) {
+  // List.push(input);
+  const words = input.split(" ");
+  const ListAdd = List;
+  ListAdd.push(words[1]);
 }
